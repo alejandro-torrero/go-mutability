@@ -12,6 +12,7 @@ func main() {
 
 	// By default, slices, maps and structs are mutables
 
+	fmt.Println("--------------- Slices --------------")
 	// slices
 	slice := []string{
 		"1", "dos", "drei",
@@ -24,6 +25,7 @@ func main() {
 	fmt.Println("Slice state", slice)
 
 	// Immutable
+	fmt.Println("--------------- Int --------------")
 
 	x := 10
 
@@ -38,6 +40,7 @@ func main() {
 
 	fmt.Println("x state", x)
 
+	fmt.Println("--------------- Struct --------------")
 	// Structs
 
 	gr := group{
@@ -54,6 +57,18 @@ func main() {
 	editGroupNamePointer(&gr, "science")
 
 	fmt.Println("gr state", gr)
+
+	fmt.Println("--------------- Pointer --------------")
+
+	a := 10
+	b := &a
+
+	fmt.Printf("a: %v b: %v\n", a, *b)
+
+	// Now we change a
+	a = 15
+
+	fmt.Printf("a: %v b: %v\n", a, *b)
 
 }
 
